@@ -15,7 +15,7 @@ import java.util.Collection;
         @Query("SELECT u FROM Requirement u WHERE u.Status = 1")
         Collection<RequirementRepository> findAllActiveUsers();
 
-        @Query("UPDATE Requirement c SET c.requirement = :Requiremnt where c.id = :Requirement Id")
+        @Query("UPDATE Requirement c SET c.requirement = :Requiremnt where c.id = :RequirementId")
         int updateRequirement(@Param("RequirementId") int RequirementId, @Param("Requirement") String Requirement);
 
         @Query("SELECT u From Requirement u Where u.Status = 1")
@@ -24,7 +24,7 @@ import java.util.Collection;
         @Query("SELECT u From Requirement u where u.status = 1")
         Collection<RequirementRepository> delete();
 
-        @Query("UPDATE SubRequirement c SET c.SubRequirement = :SubRequirement Where c.id = :SubRequirement Id")
+        @Query("UPDATE SubRequirement c SET c.SubRequirement = :SubRequirement Where c.id = :SubRequirementId")
         int updateSubRequirement(@Param("SubRequirementId") int SubRequirementId, @Param("SubRequirement") String SubRequirement);
 
     }
