@@ -15,11 +15,11 @@ public interface Requirementrepo extends JpaRepository <Requirementrepo,Long> {
     List<Requirementrepo> findAllRequirement();
 
     @Query("UPDATE Requirement c SET c.Requirement = :Requirement WHERE c.id = :RequirementId")
-    void updatepublishRequirement(@Param("RequirementId") String[] RequirementId);
-    int updateRequirement(@Param("RequirementId") int RequirementId,@Param("Requirement") String Requirement);
+    List updatepublishRequirement(@Param("RequirementId") String[] RequirementId);
+   // int updateRequirement(@Param("RequirementId") int RequirementId,@Param("Requirement") String Requirement);
 
     @Query ("UPDATE Requiremnet c SET c.Requirement = :Requirement WHERE c.id = :RequirementId")
-    void updateunPublishRequirement(@Param("RequirementId") String[] RequirementId);
+    List updateunPublishRequirement(@Param("RequirementId") String[] RequirementId);
 
     @Query ("SELECT u FROM Requirement u WHERE u.status = 1")
     Collection<Requirementrepo> save(Long a);
@@ -31,10 +31,10 @@ public interface Requirementrepo extends JpaRepository <Requirementrepo,Long> {
     int updateSubRequirement(@Param("SubRequirementId") int SubRequirementId, @Param("SubRequirement") String Requirement);
 
     @Query("UPDATE Requirement c SET c.Requirement = :Requirement WHERE c.id = :RequirementId")
-    void updateRequirement(@Param("RequirementId") Requirementrepo RequirementId);
+    List updateRequirement(@Param("RequirementId") Requirementrepo RequirementId);
 
 
-    void update(Long valueOf);
+    //void update(Long valueOf);
 
 }
 
