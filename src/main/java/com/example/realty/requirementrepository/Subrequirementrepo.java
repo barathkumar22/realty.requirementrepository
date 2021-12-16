@@ -9,13 +9,13 @@ import org.springframework.stereotype.Repository;
 public interface Subrequirementrepo extends JpaRepository<Subrequirementrepo,Long> {
 
     @Query("UPDATE SubRequirement c SET c.SubRequirement = :SubRequirement WHERE c.id = :SubRequirementId")
-    void updatepublishSubRequirement(@Param("RequirementId") String[] RequirementId);
+    List updatepublishSubRequirement(@Param("RequirementId") String[] RequirementId);
 
     @Query("UPDATE SubRequirement c SET c.SubRequirement = :SubRequirement WHERE c.id = :SubRequirementId")
-    void updateunPublishSubRequirement(@Param("RequirementId") String[] RequirementId);
+    List updateunPublishSubRequirement(@Param("RequirementId") String[] RequirementId);
 
     @Query("UPDATE SubRequirement c SET c.SubRequirement = :SubRequirement WHERE c.id = :SubRequirementId")
-    void updateSubRequirement(@Param("RequirementId") Subrequirementrepo RequirementId);
+    List updateSubRequirement(@Param("RequirementId") Subrequirementrepo RequirementId);
 
 
 }
